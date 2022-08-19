@@ -8,6 +8,16 @@
     <script>
       tailwind.config = {
         theme: {
+          screens: {
+            sm: "540px",
+            md: "760px",
+            lg: "970px",
+            xl: "1280px",
+            xxl: "1440px",
+          },
+          fontFamily: {
+            body: ["ShopifySans", "sans-serif" ],
+          },
           extend: {
             colors: {
               clifford: "#da373d",
@@ -31,7 +41,7 @@
   </head>
   <body class="">
     <!-- header  -->
-    <header class="bg-[#fbf7ed]">
+    <header id="header" class="bg-[#fbf7ed] xl:sticky xl:top-0">
       <!-- flex container  -->
       <div class="flex  items-center justify-between px-10 md:px-18 lg:px-24 mx-auto h-24 ">
         <!-- left side nav  -->
@@ -47,9 +57,9 @@
            </div>
         </div>
         <!-- right side nav  -->
-        <div class="flex items-center">
+        <div class="hidden lg:flex items-center">
           <!-- menu items  -->
-          <div class="hidden lg:flex lg:gap-x-10">
+          <div class=" lg:flex lg:gap-x-10">
             <a href="" class="relative lg:text-lg text-gray-700 font-[600] hover:text-black">Pricing</a>
             <a href="" class="relative lg:text-lg text-gray-700 font-[600] hover:text-black">Learn<img src="./imgs/down half arrow.svg" alt="" class="absolute top-3 -right-4"></a>
             <a href="" class="relative lg:text-lg text-gray-700 font-[600] hover:text-black">Login</a>
@@ -60,11 +70,468 @@
               <button class=" text-white lg:text-lg ml-8  px-3 py-2 bg-[#008060] rounded shadow-md hover:bg-[#558868] ">Try for free</button>
             </form>
           </a>
+        </div>  
+        <!-- mobile nav    -->
+        <div class="flex gap-x-8 lg:hidden">
+          <!-- login button  -->
+          <a href="" class="relative lg:text-lg text-gray-700 font-[600] hover:text-black">Login</a>
+          <!-- hamburger  -->
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" ><path d="M19 11H1a1 1 0 110-2h18a1 1 0 110 2zm0-7H1a1 1 0 110-2h18a1 1 0 110 2zm0 14H1a1 1 0 110-2h18a1 1 0 110 2z" fill="#42474c"></path></svg>
         </div>
-        
       </div>
     </header>
 
     <!-- hero section  -->
+    <section class="bg-[#fbf7ed] py-16 lg:py-24">
+      <!-- flex <container></container> -->
+      <div class="px-8 md:px-10 mx-auto flex flex-col gap-y-12 items-center justify-center lg:justify-start lg:flex-row ">
+        <!-- left side  -->
+        <div class="">
+           <!-- heading -->
+           <h1 class=" text-3xl lg:text-5xl mb-8 font-[700] text-[#00432f]">The easiest way to sell online in India</h1>
+           <p class=" text-lg  text-[#6b7177] mb-12 leading-tight">Try one of the most powerful platforms on the market for free. No technical knowledge needed.</p>
+           <div class="mb-4">
+            <form action="">
+              <div class="flex flex-col sm:flex-row -mx-2 gap-x-4 text-center gap-y-4 ">
+                <!-- <label for=""></label> -->
+                <input type="text" placeholder="Enter your email address" class="placeholder:text-[#6b7177] px-3 h-10 flex-base-0 flex-grow-999 border-[1px] border-black rounded-md">
+                <button class=" text-white lg:text-lg   px-3 py-2 bg-[#008060] rounded shadow-md hover:bg-[#558868]   ">Try for Free</button>
+              </div>
+            </form>
+           </div>
+           <div class="text-[#6b7177] text-xs font-[400]">Try Shopify free for 14 days, no credit card required. By entering your email, you agree to receive marketing emails from Shopify.</div>
+        </div>
+        <!-- right side video  -->
+        <div>
+          <div >
+            <video autoplay loop muted  poster="https://cdn.shopify.com/shopifycloud/brochure/assets/home/hero/exp-inbrochurebannerv2-video-poster-f61611dccbbf0aaa60f0e6aa3662448acc8ab35938a29bae99a61366874a43ef.png" src="./hero-video.webm" class="lg:w-3/4 mx-auto">
+            </video> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- dark green section  -->
+    <section class="bg-[#004c3f] text-white py-16 lg:py-24">
+      <!-- container  -->
+      <div class="px-8 md:px-10 mx-auto ">
+        <!-- text part  -->
+        <div>
+          <!-- heading  -->
+          <h2 class="text-3xl lg:text-4xl mb-6 font">Bring your business online</h2>
+          <p class=" text-lg mb-8">Create an ecommerce website backed by powerful tools that help you find customers, drive sales, and manage your day-to-day.</p>
+          <!-- button  -->
+          <a href="#" class="flex items-center group  gap-x-1 ">
+            <div href="#" class="text- text-white text-lg"> Explore more examples 
+            </div>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#fff"></path></svg>
+          </a>
+        </div>
+
+        <!-- images cards part  -->
+        <div class="grid gap-y-12 gap-x-4 grid-cols-2   sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 pt-16 pb-24">
+          <!-- card 01 -->
+          <div class="flex flex-col gap-y-2">
+            <img src="./imgs/section 2/1.webp" alt="">
+            <div class="uppercase font-[500] text-center">food & drink</div>
+            <div class="capitalize text-center">blue tokai</div>
+          </div>
+          <!-- card 02 -->
+          <div class="flex flex-col gap-y-2">
+            <img src="./imgs/section 2/2.webp" alt="">
+            <div class="uppercase font-[500] text-center">jewelry</div>
+            <div class="capitalize text-center">quicksmith</div>
+          </div>
+          <!-- card 03 -->
+          <div class="flex flex-col gap-y-2">
+            <img src="./imgs/section 2/3.webp" alt="">
+            <div class="uppercase font-[500] text-center">electronics</div>
+            <div class="capitalize text-center">crossbeats</div>
+          </div>
+          <!-- card 04 -->
+          <div class="flex flex-col gap-y-2">
+            <img src="./imgs/section 2/4.webp" alt="">
+            <div class="uppercase font-[500] text-center">beauty</div>
+            <div class="capitalize text-center">mcaffeine</div>
+          </div>
+          <!-- card 05 -->
+          <div class="hidden md:flex flex-col gap-y-2">
+            <img src="./imgs/section 2/5.webp" alt="">
+            <div class="uppercase font-[500] text-center">fashion </div>
+            <div class="capitalize text-center">bunaai</div>
+          </div>
+          
+        </div>
+
+        <!-- lower cards part  -->
+        <div >
+          <h2 class="text-3xl lg:text-4xl mb-6 font">Take the best path forward</h2>
+          <!-- cards  -->
+          <div class="grid gap-y-12 gap-x-12 grid-cols-1  md:grid-cols-2 justify-between    lg:grid-cols-4 pt-16">
+            <!-- card 01  -->
+            <div class=" space-y-4">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="45"  height="45"><path d="M41 6a3 3 0 00-3-3H7a3 3 0 00-3 3v31a3 3 0 003 3h6a1 1 0 001-1v-1a1 1 0 00-1-1H7V12h31v2a1 1 0 001 1h1a1 1 0 001-1V6zM11 9H7V6h4zm3 0V6h24v3zm27 12v3a1 1 0 01-1 1h-1a1 1 0 01-1-1v-2h-3v-3h4a2 2 0 012 2zm-.87 10.67L27.5 25.81a1.5 1.5 0 00-2.1 1.68l3.13 14.33A1.5 1.5 0 0029.79 43H30a1.5 1.5 0 001.33-.8l3.07-5.8 5.61-2a1.5 1.5 0 00.14-2.78zm-7.29 2.1a1.5 1.5 0 00-.83.71l-1.43 2.69L29 29.81l6.53 3zM21 33h-3v-5h3zm3 7v1a1 1 0 01-1 1h-3a2 2 0 01-2-2v-4h3v3h2a1 1 0 011 1zm8-18h-5v-3h5zm-12-3h4v3h-3v3h-3v-4a2 2 0 012-2z" fill="#C1F0D0"></path></svg>
+              <p class=" text-lg pt-3  font-[500]">Start an online business</p>
+              <p class=" text-base">Create a business, whether you’ve got a fresh idea or are looking for a new way to make money.</p>
+            </div>
+            <!-- card 02  -->
+            <div class="space-y-4"">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="45"  height="45" ><path d="M41.75 8.67L38 3.11A2.5 2.5 0 0036 2H9a2.5 2.5 0 00-2 1.11L3.25 8.67A1.5 1.5 0 003 9.5v3a7.48 7.48 0 003 6v13A3.5 3.5 0 009.5 35H15v2.5a2.5 2.5 0 01-2.5 2.5H12a1.5 1.5 0 000 3h21a1.5 1.5 0 000-3h-.5a2.5 2.5 0 01-2.5-2.5V35h5.5a3.5 3.5 0 003.5-3.5v-13a7.48 7.48 0 003-6v-3a1.5 1.5 0 00-.25-.83zM9.3 5h26.4l2.66 4H6.64zm17.79 7a1.64 1.64 0 00-.09.5 4.5 4.5 0 01-9 0 1.64 1.64 0 00-.09-.5zM6 12h9.09a1.64 1.64 0 00-.09.5 4.5 4.5 0 01-9 0zm21.61 28H17.39a5.4 5.4 0 00.61-2.5V35h9v2.5a5.4 5.4 0 00.61 2.5zM36 31.5a.5.5 0 01-.5.5h-26a.5.5 0 01-.5-.5V19.85a7.41 7.41 0 001.5.15 7.49 7.49 0 006-3 7.47 7.47 0 0012 0 7.49 7.49 0 006 3 7.41 7.41 0 001.5-.15zM34.5 17a4.51 4.51 0 01-4.5-4.5 1.64 1.64 0 00-.09-.5H39v.5a4.51 4.51 0 01-4.5 4.5z" fill="#C1F0D0"></path></svg>
+              <p class=" text-lg pt-3  font-[500]">Move your business online</p>
+              <p class=" text-base">Turn your retail store into an online store and keep serving customers without missing a beat.</p>
+            </div>
+            <!-- card 03  -->
+            <div class="space-y-4">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="45"  height="45" ><path d="M42.5 11.82v28a1.5 1.5 0 01-3 0v-27L23 5.46 6.5 12.8v27a1.5 1.5 0 01-3 0v-28a1.5 1.5 0 01.89-1.37l18-8a1.5 1.5 0 011.22 0l18 8a1.5 1.5 0 01.89 1.39zM32.5 28a1.5 1.5 0 00-1.5 1.5A8.48 8.48 0 0117.05 36h2.45a1.5 1.5 0 000-3h-6a1.5 1.5 0 00-1.5 1.5v6a1.5 1.5 0 003 0v-2.32a11.47 11.47 0 0019-8.68 1.5 1.5 0 00-1.5-1.5zM14 29.5A8.48 8.48 0 0127.95 23H25.5a1.5 1.5 0 000 3h6a1.5 1.5 0 001.5-1.5v-6a1.5 1.5 0 00-3 0v2.32a11.47 11.47 0 00-19 8.68 1.5 1.5 0 003 0z"  fill="#C1F0D0"></path></svg>
+              <p class=" text-lg pt-3 font-[500]">Switch to Shopify</p>
+              <p class=" text-base">Bring your business to Shopify, no matter which ecommerce platform you’re currently using.</p>
+            </div>
+            <!-- card 04  -->
+            <div class="space-y-3">
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="45"  height="45" ><path d="M12.5 21A6.5 6.5 0 106 14.5a6.5 6.5 0 006.5 6.5zm0-10A3.5 3.5 0 119 14.5a3.5 3.5 0 013.5-3.5zM30 21a8 8 0 10-8-8 8 8 0 008 8zm0-13a5 5 0 11-5 5 5 5 0 015-5zm13 25.5v4a1.5 1.5 0 01-3 0v-4c0-3.77-2.52-6.5-6-6.5h-7.5a6.51 6.51 0 00-6.5 6.5v4a1.5 1.5 0 01-3 0v-4a9.51 9.51 0 019.5-9.5H34c5.13 0 9 4.08 9 9.5zm-27-8a1.5 1.5 0 01-1.5 1.5h-4A5.51 5.51 0 005 32.5V36a1.5 1.5 0 01-3 0v-3.5a8.51 8.51 0 018.5-8.5h4a1.5 1.5 0 011.5 1.5z"  fill="#C1F0D0"></path></svg>
+              <p class=" text-lg pt-3 font-[500]">Hire a Shopify expert</p>
+              <p class=" text-base">Get set up with the help of a trusted freelancer or agency from the Shopify Experts Marketplace.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 03  -->
+    <section class="bg-[#fff]  py-24">
+      <!-- heading part  -->
+      <div class="flex flex-col items-center justify-center p-12">
+        <h2 class="text-3xl lg:text-4xl mb-6  font-[400] max-w-md">With you wherever you’re going</h2>
+        <p class=" text-lg mb-8 max-w-lg text-center text-[#6b7172]">One platform with all the ecommerce and point of sale features you need to start, run, and grow your business.</p>
+      </div>
+      <!-- sub-sections  -->
+      <div class="px-8 md:px-10 mx-auto space-y-20 ">
+        <!-- sub section 01  -->
+        <div class="flex flex-col-reverse gap-y-12 items-center gap-x-20 lg:flex-row">
+          <!-- left part  -->
+          <div class="w-1/2">
+            <video autoplay loop muted    src="./sell video.webm" class="lg:w-full "></video>
+          </div>
+          <!-- right part  -->
+          <div class="lg:pr-24">
+            <h3 class="text-2xl lg:text-3xl mb-6 font">Sell everywhere</h3>
+            <p class=" text-base mb-8 max-w-lg  text-[#6b7172]">Use one platform to sell products to anyone, anywhere—in person with Point of Sale and online through your website, social media, and online marketplaces.</p>
+            <!-- button  -->
+            <a href="#" class="flex items-center group  gap-x-1 ">
+              <div class="  text-[#008060] font-[500] text-lg"> Explore ways to sell 
+              </div>
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+            </a>
+          </div>
+        </div>
+        <!--subsection 02  -->
+        <div class="flex flex-col items-center gap-y-12 gap-x-20 lg:flex-row">
+          <!-- left part  -->
+          <div class="lg:pl-24">
+            <h3 class="text-2xl lg:text-3xl mb-6 font">Market your business</h3>
+            <p class=" text-base mb-8 max-w-lg  text-[#6b7172]">Take the guesswork out of marketing with built-in tools that help you create, execute, and analyze digital marketing campaigns.</p>
+            <!-- button  -->
+            <a href="#" class="flex items-center group  gap-x-1 ">
+              <div class="  text-[#008060] font-[500] text-lg"> Explore how to market your business  
+              </div>
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+            </a>
+          </div>
+          
+          <!-- right part  -->
+          <div class="w-1/2">
+            <img autoplay loop muted    src="./imgs/section 3/2.webp" class="lg:w-full "></img>
+          </div>
+        </div>
+
+        <!-- sub section 03  -->
+        <div class="flex flex-col-reverse gap-y-12 items-center gap-x-20 lg:flex-row">
+          <!-- left part  -->
+          <div class="w-1/2">
+            <img autoplay loop muted    src="./imgs/section 3/3.png" class="lg:w-full "/>
+          </div>
+          <!-- right part  -->
+          <div class="lg:pr-24">
+            <h3 class="text-2xl lg:text-3xl mb-6 font">Manage everything</h3>
+            <p class=" text-base mb-8 max-w-lg  text-[#6b7172]">Gain the insights you need to grow—use a single dashboard to manage orders, shipping, and payments anywhere you go.</p>
+            <!-- button  -->
+            <a href="#" class="flex items-center group  gap-x-1 ">
+              <div class="  text-[#008060] font-[500] text-lg"> Explore how to manage your business 
+              </div>
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 04  -->
+    <section class="bg-[#f3fcf4] py-24">
+      <!-- container  -->
+      <div class="px-12  mx-auto ">
+        <!-- heading  -->
+        <h2 class="text-3xl lg:text-4xl mb-12 font-[400]">Explore more from Shopify in India</h2>
+        <!-- main part container-->
+        <div class="grid grid-cols-1 lg:grid-cols-2 ">
+          <!-- left part  -->
+          <div class="bg-white px-8 py-8 flex flex-col gap-y-6 ">
+            <h3 class="font-[700] uppercase">start</h3>
+            <div class="space-y-6 ">
+              <h2 class="text-2xl lg:text-3xl mb-6 font">Launch your store with the help of a Shopify Expert</h2>
+              <p class="text-base mb-8 max-w-lg  text-[#6b7172]">Find hundreds of experts from India ready to help you get your store up and running, from choosing a theme to building a fully customized site.</p>
+            </div>
+            <!-- button  -->
+            <a href="#" class="flex items-center group  gap-x-1 ">
+              <div class="  text-[#008060] font-[500] text-lg">Browse Experts in India 
+              </div>
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+            </a>
+
+          </div>
+          <!-- right part  -->
+          <div class="">
+            <img src="./imgs/section 4/1.webp" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 05  -->
+    <section class="bg-[#fff] py-24">
+      <!-- container  -->
+      <div class="px-12  mx-auto ">
+        <!-- heading  -->
+        <div class="flex flex-col gap-y-6"> 
+          <h2 class="text-3xl lg:text-4xl font-[400] max-w-xl">Empowering independent business owners everywhere</h2>
+          <p class="text-xl lg:text-2xl font-[400] max-w-2xl">Millions of businesses in <strong>175 countries</strong> around the world have made over <strong>$496 billion USD</strong> in sales using Shopify.</p>
+          <!-- button  -->
+          <a href="#" class="flex items-center group  gap-x-1 ">
+            <div class="  text-[#008060] font-[500] text-lg">Browse Experts in India 
+            </div>
+            <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+          </a>
+        </div>
+        <div>
+          <img src="./imgs/section 5/globe.png" alt="" class=""
+        </div>
+    </section>
+
+    <!-- section 06  -->
+    <section class="bg-[#fff] pb-24">
+      <!-- container  -->
+      <div class="px-12  mx-auto ">
+        <!-- main part container-->
+        <div class="grid grid-cols-1 lg:grid-cols-2 ">
+          <!-- left part  -->
+          <picture class="">
+            <img src="./imgs/section 6/1.jpg" alt="" class="w-full h-full object-fit-cover ">
+          </picture>
+          
+          <!-- right part  -->
+          <div class="bg-[#002e25] py-16 px-8 text-center">
+            <blockquote class="flex flex-col  items-center justify-between gap-y-6  w-3/4 mx-auto ">
+              <p class="text-white text-lg">“Shopify was my knight in shining armor when I exhausted every other possibility of getting my online store up and running. It was stunningly easy to use, with more features and plug-ins that I didn’t even know I wanted.”
+              </p>
+              <div><img src="./imgs/section 6/2.png" alt=""></div>
+              <cite class="text-white">Alicia | Alicia Souza</cite>
+            </blockquote>
+          </div>
+        </div>
+         <!-- brand logo  -->
+        <ul class="pt-16 grid grid-cols-2 justify-between sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-7  gap-8">
+          <li><img src="./imgs/section 7/1.webp" alt="" class="w-1/2"></li>
+          <li><img src="./imgs/section 7/2.webp" alt="" class="w-1/2"></li>
+          <li><img src="./imgs/section 7/3.png" alt="" class="w-1/2"></li>
+          <li><img src="./imgs/section 7/4.webp" alt="" class="w-1/2"></li>
+          <li><img src="./imgs/section 7/5.webp" alt="" class="w-1/2"></li>
+          <li><img src="./imgs/section 7/6.webp" alt="" class="w-1/2"></li>
+          <li><img src="./imgs/section 7/7.webp" alt="" class="w-1/2"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- section 07  -->
+    <section class="bg-[#fff] pb-24">
+      <!-- container  -->
+      <div class="  mx-auto ">
+        <!-- main part container-->
+        <div class="grid grid-cols-1 items-center lg:grid-cols-2 ">
+          <!-- left part  -->
+          <div class="bg-[#fbf7ed] px-12 py-20">
+            <h2 class="text-3xl lg:text-4xl mb-10 font-[400] max-w-md">Get the help you need, every step of the way</h2>
+            <!-- features  -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-y-12 gap-x-8">
+              <!-- feature 01  -->
+              <div class="space-y-4">
+                <h3 class="text-lg text-[#212326] font-[400]">Shopify support</h3>
+                <p class="text-base text-[#6b7177] max-w-xs">Contact support 24/7, whether you’re troubleshooting issues or looking for business advice.</p>
+                <!-- button  -->
+                <a href="#" class="flex items-center group  gap-x-1 ">
+                  <div class="  text-[#008060] font-[500] text-base"> contact support 
+                  </div>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+                </a>
+              </div>
+              <!-- feature 02  -->
+              <div class="space-y-4">
+                <h3 class="text-lg text-[#212326] font-[400]">Shopify App Store</h3>
+                <p class="text-base text-[#6b7177] max-w-xs">Add features and functionality to your business with 6,000+ apps that integrate directly with Shopify.</p>
+                <!-- button  -->
+                <a href="#" class="flex items-center group  gap-x-1 ">
+                  <div class="  text-[#008060] font-[500] text-base"> Visit the Shopify App Store 
+                  </div>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+                </a>
+              </div>
+              <!-- feature 03  -->
+              <div class="space-y-4 lg:col-span-3 self-center">
+                <h3 class="text-lg text-[#212326] font-[400]">Shopify Experts Marketplace</h3>
+                <p class="text-base text-[#6b7177] max-w-xs">Hire a Shopify expert to help you with everything from store setup to SEO.</p>
+                <!-- button  -->
+                <a href="#" class="flex items-center group  gap-x-1 ">
+                  <div class="  text-[#008060] font-[500] text-base"> Explore the Shopify Experts Marketplace
+                  </div>
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="group-hover:translate-x-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- right part  -->
+          <picture class="">
+            <img src="./imgs/section 8/1.webp" alt="" class="w-full h-full object-fit-cover ">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- section 08 -->
+    <section class="pb-16">
+      <div class="px-12 space-y-6">
+        <h2 class="text-2xl lg:text-3xl  font-[400] max-w-screen-md mx-auto text-center ">Start your business journey with Shopify</h2>
+        <p class="text-lg text-[#6b7177]  text-center">Try Shopify for free, and explore all the tools and services you need to start, run, and grow your business.</p>
+        <form action="" class="text-center">
+          <button class=" text-white lg:text-lg   px-4 py-2 bg-[#008060] rounded shadow-md hover:bg-[#558868] cursor-pointer font-[500] ">Start free trial</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- section 09  -->
+    <div class="px-12">
+      <div class="  mb-8 ">
+        <!-- button  -->
+        <a href="#header" class="flex items-center justify-center md:justify-end group  gap-x-1 ">
+          <div class="  text-[#008060] font-[500] text-base"> Back to top 
+          </div>
+          <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20"  height="20" class="-rotate-90 group-hover:translate-y-[6px]"><path d="M17.707 9.293l-5-5a1 1 0 00-1.414 1.414L14.586 9H3a1 1 0 100 2h11.586l-3.293 3.293a1 1 0 001.414 1.414l5-5a1 1 0 000-1.414z" fill="#004c3f"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- footer section  -->
+    <footer class="bg-[#002e25] py-8">
+      <!-- footer container  -->
+      <div class="container px-12 mx-auto">
+        <!-- footer top  -->
+        <ul class="flex  items-center justify-center md:justify-start gap-8 pb-4 mb-4 border-b-[1px] border-[#b6babf] text-xs ">
+          <a href="" class=" font-[500] text-white">About</a>
+          <a href="" class="font-[500] text-white">Careers</a>
+          <a href="" class=" font-[500] text-white">Press & Media</a>
+          <a href="" class=" font-[500] text-white">Shopify Plus</a>
+          <a href="" class=" font-[500] text-white">Sitemap</a>
+        </ul>
+
+        <!-- footer-middle container -->
+        <div class="text-[#b6babf]  grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-6 pb-4 mb-4 border-b-[1px] border-[#b6babf]  ">
+          <!-- store col  -->
+          <div class="col-span-1 sm:col-span-2 md:col-span-3">
+            <h3 class="uppercase text-white font-[500] text-xs py-2">online store</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 text-[#b6babf] gap-y-2 ">
+              <a href="" class="hover:text-white text-[12px]">Sell online</a>
+              <a href="" class="hover:text-white text-[12px]">Features</a>
+              <a href="" class="hover:text-white text-[12px]">Examples</a>
+              <a href="" class="hover:text-white text-[12px]">Website Builder</a>
+              <a href="" class="hover:text-white text-[12px]">Ecommerce website</a>
+              <a href="" class="hover:text-white text-[12px]">Domain names</a>
+              <a href="" class="hover:text-white text-[12px]">Themes</a>
+              <a href="" class="hover:text-white text-[12px]">Shopping cart</a>
+              <a href="" class="hover:text-white text-[12px]">Mobile commerce</a>
+              <a href="" class="hover:text-white text-[12px]">Ecommerce software</a>
+              <a href="" class="hover:text-white text-[12px]">Online store builder</a>
+              <a href="" class="hover:text-white text-[12px]">Dropshipping business</a>
+            </ul>
+          </div>
+
+          <!-- support col  -->
+          <div>
+            <h3  class="uppercase text-white font-[500] text-xs py-2">support</h3>
+            <div class="grid grid-col-1 text-[#b6babf] gap-y-2 ">
+              <a href="" class="hover:text-white text-[12px]">24/7 support</a>
+              <a href="" class="hover:text-white text-[12px]">Shopify help center</a>
+              <a href="" class="hover:text-white text-[12px]">shopify community</a>
+              <a href="" class="hover:text-white text-[12px]">API documentation</a>
+              <a href="" class="hover:text-white text-[12px]">Free tools</a>
+              <a href="" class="hover:text-white text-[12px]">Free stock photos</a>
+              <a href="" class="hover:text-white text-[12px]">Websites for sale</a>
+              <a href="" class="hover:text-white text-[12px]">Logo maker</a>
+              <a href="" class="hover:text-white text-[12px]">Business name generator</a>
+              <a href="" class="hover:text-white text-[12px]">Research</a>
+              <a href="" class="hover:text-white text-[12px]">Legal</a>
+            </div>
+          </div>
+          <!-- sale col  -->
+          <div>
+            <h3  class="uppercase text-white font-[500] text-xs py-2">point of sale</h3>
+            <div class="grid grid-col-1 text-[#b6babf] gap-y-2 ">
+              <a href="" class="hover:text-white text-[12px]">Point of sale</a>
+              <a href="" class="hover:text-white text-[12px]">features</a>
+            </div>
+          </div>
+          
+          <!-- shopify col  -->
+          <div>
+            <h3  class="uppercase text-white font-[500] text-xs py-2">shopify</h3>
+            <div class="grid grid-col-1 text-[#b6babf] gap-y-2 ">
+              <a href="" class="hover:text-white text-[12px]">contact</a>
+              <a href="" class="hover:text-white text-[12px]">Partner program</a>
+              <a href="" class="hover:text-white text-[12px]">Affiliate program</a>
+              <a href="" class="hover:text-white text-[12px]">App developers</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer bottom  -->
+        <div class="flex flex-col gap-y-4 lg:flex-row justify-between items-center py-4">
+          <!-- social   -->
+          <div class="flex flex-wrap justify-between items-center gap-x-6">
+            <!-- fb  -->
+            <svg class="cursor-pointer h-8" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30"  height="30" ><path d="M15.6 30V19.4h5V15h-5v-3.1c0-1 .6-1.9 1.3-1.9h3.8V5.6h-3.8c-3.1 0-5.6 2.8-5.6 6.3V15H7.5v4.4h3.8v10.1C4.8 27.9 0 22 0 15 0 6.7 6.7 0 15 0s15 6.7 15 15c0 8.1-6.4 14.7-14.4 15z" fill="#fff"></path></svg>
+            <!-- isnta  -->
+            <svg class="cursor-pointer h-8" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" width="18"  height="18" ><defs></defs><path fill-rule="evenodd" d="M9 0c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9zM6.7 3.5h4.7c1.8 0 3.2 1.4 3.2 3.1v4.7c0 1.7-1.4 3.1-3.2 3.1H6.7c-1.8 0-3.2-1.4-3.2-3.1V6.7c0-1.8 1.4-3.2 3.2-3.2zM9 6.2c1.6 0 2.9 1.3 2.9 2.9S10.6 12 9 12s-3-1.3-3-2.9 1.3-2.9 3-2.9zm0 1.2c.9 0 1.7.8 1.7 1.7 0 .9-.8 1.7-1.7 1.7-.9 0-1.7-.8-1.7-1.7 0-.9.7-1.7 1.7-1.7zm2.8-1.7c.3 0 .6.2.6.6 0 .3-.2.6-.6.6-.3 0-.6-.2-.6-.6 0-.4.3-.6.6-.6zm-4.6-1h3.7c1.4 0 2.5 1.1 2.5 2.5v3.7c0 1.4-1.1 2.5-2.5 2.5H7.2c-1.4 0-2.5-1.1-2.5-2.5V7.2c-.1-1.4 1.1-2.5 2.5-2.5z" clip-rule="evenodd" fill="#fff"></path></svg>
+            <!-- twitter  -->
+            <svg class="cursor-pointer h-8" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30"  height="30" ><path d="M30 15c0 8.3-6.7 15-15 15S0 23.3 0 15 6.7 0 15 0s15 6.7 15 15zm-3.7-5.5c-.8.3-1.6.6-2.5.7.9-.5 1.5-1.4 1.8-2.4-.8.5-1.7.8-2.7 1-.8-.8-1.9-1.4-3.1-1.4-2.4 0-4.2 1.9-4.2 4.3 0 .3 0 .7.1 1-3.5-.2-6.7-1.9-8.8-4.5-.3.7-.6 1.4-.6 2.2 0 1.5.7 2.8 1.9 3.5-.7 0-1.4-.2-1.9-.5 0 2.1 1.5 3.8 3.4 4.2-.3.1-.7.1-1.1.1-.3 0-.6 0-.8-.1.5 1.7 2.1 2.8 4 2.9-1.5 1.1-3.3 1.9-5.3 1.9-.3 0-.7 0-1-.1 1.9 1.2 4.1 1.9 6.5 1.9 7.8 0 12.1-6.5 12.1-12.1v-.6c.9-.4 1.6-1.2 2.2-2z" fill="#fff"></path></svg>
+            <!-- linkedin -->
+            <svg class="cursor-pointer h-8" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30"  height="30" ><path d="M30 15c0 8.3-6.7 15-15 15S0 23.3 0 15 6.7 0 15 0s15 6.7 15 15zM11.3 7.8c0-1.2-1-2.2-2.5-2.2s-2.5.9-2.5 2.2c0 1.2 1 2.2 2.5 2.2s2.5-1 2.5-2.2zm-.7 4.1H6.9v10.6h3.8V11.9zm13.8 5c0-3.4-1.7-5.6-4.4-5.6-1.5 0-2.6.9-3.1 2.3l-.1-1.6H13c0 .4.1 2.5.1 2.5v8.1h3.8V17c0-1.5.7-2.5 1.8-2.5s1.9.6 1.9 2.5v5.6h3.8v-5.7z" fill="#fff"></path></svg>
+            <!-- pininterest  -->
+            <svg class="cursor-pointer h-8" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30"  height="30" ><path d="M15 30c-1.5 0-2.9-.2-4.3-.6.6-.9 1.2-2 1.5-3.2.2-.7 1-4.1 1-4.1.5 1 2 1.9 3.7 1.9 4.8 0 8.1-4.4 8.1-10.3 0-4.4-3.8-8.6-9.5-8.6-7.1-.1-10.6 5-10.6 9.3 0 2.6 1 4.9 3.1 5.7.3.1.7 0 .8-.4.1-.2.2-.9.3-1.2.1-.4 0-.5-.2-.8-.6-.7-1-1.6-1-3 0-3.8 2.8-7.2 7.4-7.2 4 0 6.2 2.5 6.2 5.8 0 4.3-1.9 8-4.8 8-1.6 0-2.7-1.3-2.4-2.9.5-1.9 1.3-4 1.3-5.3 0-1.2-.7-2.3-2-2.3-1.6 0-2.9 1.7-2.9 3.9 0 1.4.5 2.4.5 2.4S9.5 24 9.3 25.3c-.3 1.1-.4 2.4-.3 3.5-5.3-2.4-9-7.7-9-13.8C0 6.7 6.7 0 15 0s15 6.7 15 15-6.7 15-15 15z" fill="#fff"></path></svg>
+            <!-- yt  -->
+            <svg class="cursor-pointer h-8" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30"  height="30" ><path d="M30 15c0 8.3-6.7 15-15 15S0 23.3 0 15 6.7 0 15 0s15 6.7 15 15zm-5.6 0c0-6.9 0-6.9-9.4-6.9s-9.4 0-9.4 6.9 0 6.9 9.4 6.9 9.4 0 9.4-6.9zm-11.9-3.7l6.3 3.8-6.3 3.8v-7.6z" fill="#fff"></path></svg>
+           
+          </div>
+          <!-- others  -->
+          <div class="flex justify-between items-center text-xs text-white">
+            <a href="#">Terms of Service</a>
+            <a href="#" class="mx-6">Privacy Policy</a>
+            <a class=" flex items-center justify-center ">
+              <svg class="h-6 " xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" width="45"  height="45" ><path d="M22.5 2A20.5 20.5 0 1043 22.5 20.52 20.52 0 0022.5 2zm-4.23 28.79A33.67 33.67 0 0022 31a34.54 34.54 0 004.76-.33 30.45 30.45 0 01-4.26 9 30.41 30.41 0 01-4.23-8.88zM22 28a29.86 29.86 0 01-4.47-.34A31 31 0 0117 22a29.87 29.87 0 01.36-4.64A30.13 30.13 0 0122 17a31 31 0 015.66.53A29.85 29.85 0 0128 22a31 31 0 01-.5 5.5 31 31 0 01-5.5.5zm-7.64-1a25.22 25.22 0 01-9.15-4.5 24.89 24.89 0 019-4.48A33.56 33.56 0 0014 22a34.61 34.61 0 00.36 5zM22.5 5.21a25.25 25.25 0 014.5 9.15 34.61 34.61 0 00-5-.36 33.58 33.58 0 00-4 .24 25.24 25.24 0 014.5-9.03zm8.29 13.06a30.41 30.41 0 018.89 4.23 30.46 30.46 0 01-9 4.26A34.54 34.54 0 0031 22a33.67 33.67 0 00-.21-3.73zm8.82.59A33.75 33.75 0 0030.26 15a29.2 29.2 0 00-3.89-9.56 17.54 17.54 0 0113.24 13.42zm-21-13.41a29.16 29.16 0 00-3.85 9.35 29.16 29.16 0 00-9.35 3.85A17.54 17.54 0 0118.64 5.44zM5.44 26.36a29.2 29.2 0 009.56 3.9 33.75 33.75 0 003.86 9.36A17.54 17.54 0 015.44 26.36zm20.7 13.25a33.73 33.73 0 003.91-9.56 33.73 33.73 0 009.56-3.91 17.55 17.55 0 01-13.47 13.47z" fill="#fff"></path></svg>
+              <p class="text-base text-white mr-2">India</p>
+              <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 5" width="10"  height="5" ><path d="M0 0l5 5 5-5H0z" fill="#fff"></path></svg>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </footer>
+
   </body>
 </html>

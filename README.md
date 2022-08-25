@@ -21,9 +21,6 @@ This is a solution to the Tailwind project no. 02 given in Full Stack Web develo
 
 ### The challenge
 
-Users should be able to
-
-
 - code the given design [shofify.in](https://www.shopify.in/) using HTML and tailwind CSS
 - make it responsive
 

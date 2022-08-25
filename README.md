@@ -41,7 +41,7 @@ This is a solution to the Tailwind project no. 02 given in Full Stack Web develo
 I gained indepth understanding of tailwind CSS and how to use it to make the website responsive for various screens.
 
 ### Continued development
-In my future projects, I will take leverage of tailwind CSS to desing my projects and will do more projects to master tailwind css.
+In my future projects, I will take leverage of tailwind CSS to design my projects and will do more projects to master tailwind css.
 
 ### Useful resources
 
